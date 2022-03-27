@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --body: #021a22;
+    --calculadora: #005272;
+    --btns: #008a8a;
+    --sombra-btns: #003a30;
+    --sombra-calc: rgb(0, 61, 38);
+}
+body{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: var(--body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 385px;
+    height: 85vh;
+    background-color: var(--calculadora);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 var(--sombra-calc);
+}
+.imprimir{
+    width: 90%;
+    height: 69px;
+    background-color: var(--btns);
+    margin: 30px auto;
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+    filter: drop-shadow(0 0 5px var(--body));
+}
+#resultado{
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    font-weight: 400;
+    font-family: sans-serif;
+    color: #fff;
+}
+#resultado::selection{
+    background-color: transparent;
+}
+
+#uno{grid-area: uno;}
+#dos{grid-area: dos;}
+#tres{grid-area: tres;}
+#cuatro{grid-area: cuatro;}
+#cinco{grid-area: cinco;}
+#seis{grid-area: seis;}
+#siete{grid-area: siete}
+#ocho{grid-area: ocho;}
+#nueve{grid-area: nueve;}
+#cero{grid-area: cero;}
+#cls{grid-area: cls;}
+#division{grid-area: division;}
+#mult{grid-area: mult;}
+#suma{grid-area: suma;}
+#resta{grid-area: resta;}
+#igual{grid-area: igual;}
+#punto{grid-area: punto;}
+#doble-cero{grid-area: dobleCero;}
+
+
+.btn{
+    width: 90%;
+    height: 60%;
+    margin: 69px auto;
+    border-radius: 0 0 5px 5px;
+    display: grid;
+    grid-template-areas:
+    "siete ocho nueve cls cls"
+    "cuatro cinco seis mult division"
+    "uno dos tres suma resta"
+    "cero dobleCero punto igual igual";
+    gap: 20px;
+}
+.btn button{
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--btns);
+    filter: drop-shadow(0 0 5px var(--body));
+    font-weight: 400;
+    font-family: sans-serif;
+    color: #fff;
+    border: none;
+}
+.btn > button:hover{
+    cursor: pointer;
+    background-color: #00b7ff;
+}
+.btn > button:active{
+    cursor: pointer;
+    background-color: var(--btns);
+}
+.btn > button::selection{
+    background-color: transparent;
+}
